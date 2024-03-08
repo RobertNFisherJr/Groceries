@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "zWi9ENpmO8Y8g0r/Tbv3l6MN9PgZyptU86beQi0aEJEc0F3DmFSfURBpy/waYwA7VstQ58ZOkrmEHPPADeEJyw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rober\\source\\repos\\GroceriesGit\\GroceryAssistant\\GroceryAssistant.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rober\\.nuget\\packages\\jquery\\3.7.1\\jquery.3.7.1.nupkg.sha512",
+    "C:\\Users\\rober\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

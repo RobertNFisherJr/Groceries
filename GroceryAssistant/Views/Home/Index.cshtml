@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model GroceryAssistant.Views.Home.CreateItemModel
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To GroceryAssistent Alpha 0.01
+    </h1>
+    <p>This Application was written in .Net Core 7 and features ASP.Net Core, Bootstrap, HTML, CSS, and JS to help me create my weekly grocery list organized to help with pathing.</a>.</p>
+    <form method="post" action="@Url.Action("CreateItem","Home")">
+        <div class="m-2">
+            <label for="Product">Product</label>
+            <input type="text" id="Product" name="Product" />
+        </div>
+
+        <div class="m-2">
+            <label for="Qty">Qty</label>
+            <input type="number" id="Qty" name="Qty" />
+        </div>
+
+        <div class="m-2">
+            <label for="Scalar">Scalar</label>
+            <input type="text" id="Scalar" name="Scalar" />
+        </div>
+
+        <div class="m-2">
+            <label for="Category">Category</label>
+            <input type="text" id="Category" name="Category" />
+        </div>
+        <div>
+            <label asp-for="Receipe">Category</label>
+            <input asp-for="Receipe" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Store">Category</label>
+            <input asp-for="Store" class="form-control" />
+        </div>
+        <button typeof="submit" class="btn btn-secondary m-3" value="Create" >Add Grocery to your List</button>
+    </form>
+    <form method="get" action="@Url.Action("GetGroceryList","Home")">
+        <label for="date">Select Relevent Date</label><input type="date" id="date" name="date"/>
+        <button class="btn-secondary" type="submit">Create Grocery List</button>
+    </form>
+    <form method="get" action="@Url.Action("EmailGroceryList","Home")">
+        <label for="date">Select Relevent Date</label><input type="date" id="date" name="date" />
+        <button class="btn-secondary" type="submit">Email Grocery List</button>
+    </form>
+    @if(ViewBag.Recipes != null){
+        @using (Html.BeginForm("AddItemsFromReceipes", "Home", FormMethod.Post))
+        {
+            <div>
+                <label for="selectedRecipe">Select a recipe:</label>
+                <select id="selectedRecipe" name="SelectedValue">
+                    @foreach (var item in ViewBag.Recipes)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+            </div>
+            <input type="submit" value="Submit" />
+        }
+
+    }
+
+
+</div>
